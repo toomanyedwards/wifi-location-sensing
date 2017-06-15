@@ -3,14 +3,13 @@ jobs:
   - name: wifi-location-sensing-server-manifest
     type: manifest
     steps:
-      - IN: dv-img2
-      - IN: dv-img-opts2
+      - IN: wifi-location-sensing-server-image
+      - IN: wifi-location-sensing-server-docker-options
       - TASK: managed
 
-  - name: wifi-location-sensing-server-deply
+  - name: wifi-location-sensing-server-deploy
     type: deploy
     steps:
       - IN: wifi-location-sensing-server-manifest
-#      - IN: dv-params
-      - IN: env-test-ecs3
+      - IN: wifi-location-sensing-server-test-ecs-cluster
       - TASK: managed
