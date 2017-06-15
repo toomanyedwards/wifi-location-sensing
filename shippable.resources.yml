@@ -41,6 +41,6 @@ resources:
     integration: AWS-Integration
     pointer:
       sourceName : "wifi-location-sensing-server"
-      region: "us-east-1"
+      region: "us-east-1c"
 
 #######1: EOF Create DV pipeline
