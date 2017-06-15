@@ -17,10 +17,7 @@ resources:
       
       #master.2
 
-  - name: intName
-    type: integration
-    integration: AWS-Integration
-    region: foo
+
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
     type: dockerOptions
@@ -41,9 +38,9 @@ resources:
 # add TEST env - AWS cluster
   - name: env-test-ecs
     type: cluster
-    integration: intName
+    integration: AWS-Integration
     pointer:
-      sourceName : "wifi-location-sensing-server
+      sourceName : "wifi-location-sensing-server"
       region: "us-east-1c"
 
 #######1: EOF Create DV pipeline
