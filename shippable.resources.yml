@@ -18,5 +18,5 @@ resources:
     type: cluster
     integration: AWS-Integration
     pointer:
-      sourceName : ""wifi-location-sensing-cluster"
+      sourceName : "wifi-location-sensing-cluster"
       region: "us-east-1b"
