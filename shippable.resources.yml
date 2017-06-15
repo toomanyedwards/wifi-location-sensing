@@ -30,7 +30,7 @@ resources:
 #        MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=QRsFUOV7XbNdHfTnJ7KU9bgQdnun-m_I"
 
 # add TEST env - AWS cluster
-  - name: env-test-ecs
+  - name: ecs-cluster
     type: cluster
     integration: AWS-Integration
     pointer:
