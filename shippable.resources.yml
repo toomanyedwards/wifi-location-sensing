@@ -26,5 +26,5 @@ resources:
     integration: AWS-Integration
     pointer:
       sourceName : "wifi-location-sensing-server"
-      region: "us-east-1c"
+      region: "us-east-1"
 
