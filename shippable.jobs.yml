@@ -19,7 +19,7 @@ jobs:
     steps:
       - IN: dv-manfoo2
 #      - IN: dv-params
-      - IN: env-test-ecs
+      - IN: env-test-ecs3
       - TASK: managed
 
 # / TEST deployment for VISUALIZER to Amazon ECS
