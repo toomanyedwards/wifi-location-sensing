@@ -3,14 +3,13 @@ language: none
 build:
   ci:
     - echo 'CI Running'
-    - export IMAGE_NAME=toomanyedwards/connective-core-docker-repo
-    - ./build.sh
+    - export IMAGE_NAME=348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server
+    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker build -t $IMAGE_NAME:$BRANCH.$BUILD_NUMBER .; fi
 
   post_ci:
-    - ./push.sh
+    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker push $IMAGE_NAME:$BRANCH.$BUILD_NUMBER; fi
 
 integrations:
   hub:
-    - integrationName: "Docker-Hub-Integration"
-      type: docker
-
+    - integrationName: ecr-integration
+      type: ecr
