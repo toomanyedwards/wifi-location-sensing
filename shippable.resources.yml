@@ -1,12 +1,12 @@
 resources:
-  - name: pipelines-demo-image
+  - name: wifi-location-sensing-server-image
     type: image
-    integration: shipdeploy
+    integration: ecr-integration
     pointer:
-      sourceName: "shippablesamples/samplepipelinesdemo"
+      sourceName: "348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server"
       isPull: false
     seed:
-      versionName: "latest"
+      versionName: master.1
 
   - name: docker-options
     type: dockerOptions
@@ -16,7 +16,7 @@ resources:
 
   - name: ecs-cluster
     type: cluster
-    integration: aws
+    integration: AWS-Integration
     pointer:
-      sourceName : "my-cluster" #name of the cluster to which we are deploying
-      region: "us-west-2"
+      sourceName : ""wifi-location-sensing-cluster"
+      region: "us-east-1b"

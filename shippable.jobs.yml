@@ -1,14 +1,14 @@
 jobs:
-  - name: pipelines-demo-manifest
+  - name: wifi-location-sensing-server-manifest
     type: manifest
     steps:
-     - IN: pipelines-demo-image
+     - IN: wifi-location-sensing-server-image
      - TASK: managed
 
-  - name: deploy-pipelines-demo
+  - name: deploy-wifi-location-sensing-server
     type: deploy
     steps:
-      - IN: pipelines-demo-manifest
+      - IN: wifi-location-sensing-server-manifest
       - IN: docker-options
       - IN: ecs-cluster
       - TASK: managed
