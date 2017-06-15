@@ -14,7 +14,7 @@ jobs:
 #/ manifest gen for VISUALIZER
 
 # TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs
+  - name: dv-test-ecs2
     type: deploy
     steps:
       - IN: dv-manfoo2
