@@ -17,6 +17,10 @@ resources:
       
       #master.2
 
+  - name: intName
+    type: integration
+    integration: AWS-Integration
+    region: foo
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
     type: dockerOptions
