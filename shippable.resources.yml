@@ -11,7 +11,7 @@ resources:
       versionName: latest
       
     
-  - name: r
+  - name: wifi-location-sensing-server-docker-options
     type: dockerOptions
     version:
       memory: 128
