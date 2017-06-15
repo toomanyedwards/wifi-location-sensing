@@ -1,32 +1,16 @@
 jobs:
 
-# jobs for the dv pipeline from CI thru TEST environment
-
-
-# manifest gen for VISUALIZER
-  - name: dv-manfoo2
+  - name: wifi-location-sensing-server-manifest
     type: manifest
     steps:
       - IN: dv-img2
       - IN: dv-img-opts2
       - TASK: managed
 
-#/ manifest gen for VISUALIZER
-
-# TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs2
+  - name: wifi-location-sensing-server-deply
     type: deploy
     steps:
-      - IN: dv-manfoo2
+      - IN: wifi-location-sensing-server-manifest
 #      - IN: dv-params
       - IN: env-test-ecs3
       - TASK: managed
-
-# / TEST deployment for VISUALIZER to Amazon ECS
-
-# Connect CI with dv-img resource
-#  - name: samplePipelinesDemo_runCI
-#    type: runCI
-#    steps:
-#      - OUT: dv-img
-# / Connect CI with dv-img resource
