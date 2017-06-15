@@ -1,10 +1,15 @@
 resources:
 
-  - name: wifi-location-sensing-server-image
+# resources for the dv demo pipelines from CI thru TEST environment
+
+#######1: Create DV pipeline
+
+# Docker Image for VISUALIZER
+  - name: dv-img
     type: image
-    integration: ecr-integration
+    integration: Docker-Hub-Integration
     pointer:
-      sourceName: 348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server
+      sourceName: toomanyedwards/connective-core-docker-repo
       isPull: false
     #make sure this seed version exists in your registry account
     seed:
@@ -13,7 +18,7 @@ resources:
       #master.2
 
 # Docker Image Options for VISUALIZER
-  - name: docker-options
+  - name: dv-img-opts
     type: dockerOptions
     version:
       memory: 128
@@ -30,11 +35,11 @@ resources:
 #        MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=QRsFUOV7XbNdHfTnJ7KU9bgQdnun-m_I"
 
 # add TEST env - AWS cluster
-  - name: ecs-cluster
+  - name: env-test-ecs
     type: cluster
     integration: AWS-Integration
     pointer:
-      sourceName : "wifi-location-sensing-clusterFOO"
+      sourceName : "wifi-location-sensing-cluster"
       region: "us-east-1b"
 
 #######1: EOF Create DV pipeline
