@@ -3,7 +3,7 @@ resources:
     type: image
     integration: ecr-integration
     pointer:
-      sourceName: "348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server"
+      sourceName: 348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server
       isPull: false
     seed:
       versionName: master.1
