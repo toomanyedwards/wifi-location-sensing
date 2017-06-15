@@ -5,7 +5,7 @@ resources:
 #######1: Create DV pipeline
 
 # Docker Image for VISUALIZER
-  - name: dv-img
+  - name: dv-img2
     type: image
     integration: Docker-Hub-Integration
     pointer:
