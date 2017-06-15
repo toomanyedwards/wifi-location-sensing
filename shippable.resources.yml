@@ -1,22 +1,40 @@
 resources:
+
   - name: wifi-location-sensing-server-image
     type: image
     integration: ecr-integration
     pointer:
       sourceName: 348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server
       isPull: false
+    #make sure this seed version exists in your registry account
     seed:
-      versionName: master.1
+      versionName: latest
+      
+      #master.2
 
+# Docker Image Options for VISUALIZER
   - name: docker-options
     type: dockerOptions
     version:
+      memory: 128
+      cpuShares: 256
       portMappings:
         - 80:80
+      publishAllPorts : true
 
-  - name: ecs-cluster
+# env vars for VISUALIZER
+#  - name: dv-params
+#    type: params
+#    version:
+#      params:
+#        MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=QRsFUOV7XbNdHfTnJ7KU9bgQdnun-m_I"
+
+# add TEST env - AWS cluster
+  - name: env-test-ecs
     type: cluster
     integration: AWS-Integration
     pointer:
-      sourceName: wifi-location-sensing-server
-      region: us-east-1c
+      sourceName : "wifi-location-sensing-cluster"
+      region: "us-east-1b"
+
+#######1: EOF Create DV pipeline
