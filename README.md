@@ -1,1 +1,3 @@
-This is the repo for the server of the Convective Core Wifi Location Sensing application.
+# Convective Core Wifi Location Sensing Server
+
+This is repo for the server component of the Convective Core Wifi Location Sensing application
