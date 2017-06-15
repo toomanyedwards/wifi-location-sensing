@@ -7,8 +7,8 @@ jobs:
   - name: dv-manfoo2
     type: manifest
     steps:
-      - IN: dv-img
-      - IN: dv-img-opts
+      - IN: dv-img2
+      - IN: dv-img-opts2
       - TASK: managed
 
 #/ manifest gen for VISUALIZER

@@ -19,7 +19,7 @@ resources:
 
 
 # Docker Image Options for VISUALIZER
-  - name: dv-img-opts
+  - name: dv-img-opts2
     type: dockerOptions
     version:
       memory: 128
@@ -36,7 +36,7 @@ resources:
 #        MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=QRsFUOV7XbNdHfTnJ7KU9bgQdnun-m_I"
 
 # add TEST env - AWS cluster
-  - name: env-test-ecs
+  - name: env-test-ecs2
     type: cluster
     integration: AWS-Integration
     pointer:
