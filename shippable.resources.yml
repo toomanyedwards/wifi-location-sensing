@@ -41,7 +41,7 @@ resources:
 # add TEST env - AWS cluster
   - name: env-test-ecs
     type: cluster
-    integration: AWS-Integration-Semaphore
+    integration: intName
     pointer:
       sourceName : "wifi-location-sensing-server
       region: "us-east-1c"
