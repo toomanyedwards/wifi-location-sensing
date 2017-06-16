@@ -4,6 +4,7 @@ jobs:
     type: manifest
     steps:
       - IN: wifi-location-sensing-server-image
+      - IN: wifi-location-sensing-server-image-docker-options
       - TASK: managed
 
   - name: wifi-location-sensing-server-deploy
