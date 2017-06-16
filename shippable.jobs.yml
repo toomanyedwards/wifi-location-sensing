@@ -11,6 +11,6 @@ jobs:
     type: deploy
     steps:
       - IN: wifi-location-sensing-server-manifest
+        force: true
       - IN: wifi-location-sensing-server-test-ecs-cluster
       - TASK: managed
-        deployMethod: replace
