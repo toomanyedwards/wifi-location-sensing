@@ -8,7 +8,7 @@ resources:
       isPull: false
     
     seed:
-      versionName: master.47
+      versionName: master.49
 
       
   - name: wifi-location-sensing-server-image-docker-options
