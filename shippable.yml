@@ -9,16 +9,10 @@ build:
 
   post_ci:
     - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker push $IMAGE_NAME:$BRANCH.$BUILD_NUMBER; fi
+    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/wifi-location-sensing-server-image.env
  
 
 integrations:
   hub:
     - integrationName: ecr-integration
       type: ecr
-
-notifications:
-    - integrationName: WifiLocationSensingServerCDTrigger
-      type: webhook
-      payload:
-        - versionName=$BUILD_NUMBER
-      on_success: always
