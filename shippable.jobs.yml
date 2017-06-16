@@ -13,3 +13,4 @@ jobs:
       - IN: wifi-location-sensing-server-manifest
       - IN: wifi-location-sensing-server-test-ecs-cluster
       - TASK: managed
+        deployMethod: replace
