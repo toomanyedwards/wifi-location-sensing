@@ -1,18 +1,15 @@
-var path = require('path');
-var express = require('express');
-var app = express();
+'use strict';
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname, '/static')));
+const express = require('express');
 
-app.get('/static/*', function (req, res) {
-	res.sendFile(__dirname + req.url);
-});
-app.get('/*', function (req, res) {
-	res.sendFile( __dirname + '/static/app.html');
+// Constants
+const PORT = 8080;
+
+// App
+const app = express();
+app.get('/', function (req, res) {
+  res.send('Hello world\n');
 });
 
-app.listen(8080, function () {
-	console.log('Example app listening on port 80!');
-});
+app.listen(PORT);
+console.log('Running on http://localhost:' + PORT);

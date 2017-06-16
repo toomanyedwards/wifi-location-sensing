@@ -1,7 +1,15 @@
-FROM node:0.10.44-slim
+FROM node:boron
 
-ADD . /home/demo/dv/
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-RUN cd /home/demo/dv && npm install
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
 
-ENTRYPOINT ["/home/demo/dv/boot.sh"]
+# Bundle app source
+COPY . /usr/src/app
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
