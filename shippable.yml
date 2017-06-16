@@ -13,3 +13,10 @@ integrations:
   hub:
     - integrationName: ecr-integration
       type: ecr
+
+ notifications:
+   - integrationName: WifiLocationSensingServerCDTrigger
+     type: webhook
+     payload:
+       - versionName=$BUILD_NUMBER
+     on_success: always
