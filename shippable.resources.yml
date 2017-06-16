@@ -8,16 +8,7 @@ resources:
       isPull: false
     
     seed:
-      versionName: master.39
-      
-    
-  - name: wifi-location-sensing-server-docker-options
-    type: dockerOptions
-    version:
-      portMappings:
-        - 80:80
-      publishAllPorts : true
-
+      versionName: master.40
 
   - name: wifi-location-sensing-server-test-ecs-cluster
     type: cluster
