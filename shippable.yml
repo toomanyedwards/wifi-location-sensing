@@ -14,9 +14,9 @@ integrations:
     - integrationName: ecr-integration
       type: ecr
 
- notifications:
-   - integrationName: WifiLocationSensingServerCDTrigger
-     type: webhook
-     payload:
-       - versionName=$BUILD_NUMBER
-     on_success: always
+notifications:
+    - integrationName: WifiLocationSensingServerCDTrigger
+      type: webhook
+      payload:
+        - versionName=$BUILD_NUMBER
+      on_success: always
