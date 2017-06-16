@@ -4,12 +4,12 @@ build:
   ci:
     - echo 'CI Running'
     - export IMAGE_NAME=348566687808.dkr.ecr.us-east-1.amazonaws.com/convective-core/labs/wifi-location-sensing-server
-#    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker build -t $IMAGE_NAME:$BRANCH.$BUILD_NUMBER .; fi
-    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker build -t latest .; fi
+    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker build -t $IMAGE_NAME:$BRANCH.$BUILD_NUMBER .; fi
+    
 
   post_ci:
-#    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker push $IMAGE_NAME:$BRANCH.$BUILD_NUMBER; fi
-    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker push latest; fi
+    - if [ "$IS_PULL_REQUEST" == false ]; then sudo docker push $IMAGE_NAME:$BRANCH.$BUILD_NUMBER; fi
+ 
 
 integrations:
   hub:
