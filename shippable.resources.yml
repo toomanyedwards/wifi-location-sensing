@@ -14,8 +14,6 @@ resources:
   - name: wifi-location-sensing-server-docker-options
     type: dockerOptions
     version:
-      memory: 128
-      cpuShares: 256
       portMappings:
         - 80:80
       publishAllPorts : true
