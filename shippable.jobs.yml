@@ -1,4 +1,8 @@
 jobs:
+  - name: wifi-location-sensing-server_runCI
+    type: runCI
+    steps:
+      - OUT: wifi-location-sensing-server-image
 
   - name: wifi-location-sensing-server-manifest
     type: manifest
