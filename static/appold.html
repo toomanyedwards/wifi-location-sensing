@@ -1,0 +1,99 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <title>Convective Core Wifi Location Sensing</title>
+    <link rel="stylesheet" href="static/css/app.css" media="screen" title="no title" charset="utf-8">
+    
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"/>
+    <script type="text/javascript" src="static/js/app.jdds"/>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"/>
+    <script type="text/javascript" src="static/js/app.jdds"/>
+  </head>
+
+  <body>
+    <div class="titleText">Convective Core Wifi Location Sensing</div>
+    <br>
+    <div class="wifiLocationArea" width="100" height="100" >
+    <!--<div class="wifiCanvas" align="center">-->
+    <!--<div class="wifiLocationArea" width="1200" height="600" align="center">-->
+        <!--<canvas id="DemoCanvas" width="1200" height="600"/>-->
+    </div>
+<script>
+</script>
+<!--
+<script>
+var canvas = document.getElementById("DemoCanvas");
+if (canvas.getContext) 
+{
+ var ctx = canvas.getContext('2d');
+
+var my_gradient=ctx.createLinearGradient(0,0,0,canvas.height);
+my_gradient.addColorStop(0,"#A0A0A0");
+my_gradient.addColorStop(1,"#E0E0E0");
+ctx.fillStyle=my_gradient;
+//ctx.fillRect(20,20,150,100);
+
+//ctx.fillStyle = '#66B2FF';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+ /*
+ ctx.beginPath();
+ ctx.lineWidth = "3";
+ ctx.strokeStyle = "blue";
+ ctx.strokeRect(60, 60, 160, 160);
+ */
+ //Move the origin from (0,0) t0 (50,50)
+ ctx.translate(600, 300);
+ /*  
+ ctx.strokeStyle = "red";
+ ctx.strokeRect(60, 60, 160, 160);
+ ctx.stroke();
+ */
+
+//var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.scale(100,100);
+      var centerX = 0;
+      var centerY = 0;
+      var radius = .05;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = 'green';
+      context.fill();
+      context.lineWidth = .01;
+      context.strokeStyle = '#003300';
+      context.stroke();
+
+}
+</script>-->
+    
+    <div class="injectMessageDiv">
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Inject Message</button>
+    </form>
+    </div>
+    <!--
+    <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#m').val());
+          $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          console.log("Received message: " + msg);
+          //$('#messages').append($('<li>').text(msg));
+          //window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>-->
+  </body>
+</html>

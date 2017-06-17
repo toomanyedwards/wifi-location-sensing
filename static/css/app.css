@@ -1,0 +1,59 @@
+ * { 
+     margin: 0; padding: 0; box-sizing: border-box; 
+}
+body { 
+    font: 13px Helvetica, Arial; 
+    background:linear-gradient(#040429, #257eb7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.titleText{
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font: 28px Helvetica, Arial; 
+}
+
+
+.wifiLocationArea{
+    display:block;
+    border: 2px solid black;
+    margin: auto;
+    background:linear-gradient(#A9A9A9, white);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.container {
+	height: 5px; 
+    margin:auto;
+}
+
+.clearLocationAreaButton{
+        margin: auto;
+}
+
+.clearLocationAreaDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 100%;
+	height: 60px;
+}
+
+
+.injectMessageFormDiv {
+       
+	width: 100%;
+	height: 60px;
+  
+}
+
+.injectMessageFormInput { 
+    border: 1; 
+    margin-left: 5%; 
+    width: 80%; 
+}
