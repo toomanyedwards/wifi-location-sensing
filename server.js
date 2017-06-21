@@ -45,7 +45,8 @@ app.get('/', function(req, res){
 */
 app.post('/', function(req, res){
   const body = req.body;
-  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: foo ' + body.event.name);
+  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: foo2 ' + body);
+  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: bar ' + body.event.name);
   res.set('Content-Type', 'text/plain');
   //res.send('You sent foo2: ' + body + ' to Express');
   res.send('You sent foo2: ' + req.body.event.name + ' to Express');
