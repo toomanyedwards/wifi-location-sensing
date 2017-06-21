@@ -8,6 +8,7 @@
       form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
       form button { width: 20%; padding: 10px; }
+      form textarea { resize: none; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
@@ -23,7 +24,21 @@
     <ul id="messages"></ul>
 
     <!-- Control buttons -->
+    
     <form action="">
+      <textarea id="monitorMessageTextArea" rows="10" cols="100">
+{ 
+    "event": 
+    { 
+        "name": "signalStrengthPacketReceived", 
+        "monitorId": "CCNET_Monitor_ID", 
+        "macAddress": "f0:24:75:7b:c6:d9", 
+        "signalStrengthIndB": "<SIGNAL STRENGTH>" 
+    }
+}
+      </textarea>
+      <br>
+      <button id="injectMonitorMessageButton">Inject Monitor Message</button>
       <button id="pauseResumeButton">Pause</button>
       <button id="clearButton">Clear</button>
     </form>

@@ -17,6 +17,20 @@ $(window).load(function(){
         window.scrollTo(0, document.body.scrollHeight);
     });
 
+    // Inject monitor message button click handler
+    $("#injectMonitorMessageButton").click(function(){
+        
+        $.ajax(
+            "\\", 
+            {
+                //data : '{"hello":"word"}',
+                data: $("#monitorMessageTextArea").text(),
+                contentType : 'application/json',
+                type : 'POST',
+            }
+        );
+    });
+
 
     // Clear button click handler
     $("#clearButton").click(function(){

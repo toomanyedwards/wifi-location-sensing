@@ -1,0 +1,9 @@
+{ 
+    "event": 
+    { 
+        "name": "signalStrengthPacketReceived", 
+        "monitorId": "'"$monitorId"'", 
+        "macAddress": "'"$macAddress"'", 
+        "signalStrengthIndB": "'"$signalStrengthIndB"'" 
+    }
+}
