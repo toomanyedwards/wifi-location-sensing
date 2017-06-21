@@ -13,28 +13,15 @@
       #messages li:nth-child(odd) { background: #eee; }
       #messages { margin-bottom: 40px }
     </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script type="text/javascript" src="static/js/debug.js"></script>
   </head>
   <body>
     <ul id="messages"></ul>
     <form action="">
-      <button>Pause</button>
-      <button>Clear</button>
+      <button id="pauseResumeButton">Pause</button>
+      <button id="clearButton">Clear</button>
     </form>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      $(function () {
-        var socket = io();
-        $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-        socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
-          window.scrollTo(0, document.body.scrollHeight);
-        });
-      });
-    </script>
   </body>
 </html>
