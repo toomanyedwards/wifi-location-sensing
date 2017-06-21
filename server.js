@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var common = require('./common/common.js');
 var bodyParser = require('body-parser'); 
 var port = 8080;
 
@@ -14,10 +15,16 @@ app.use(bodyParser.text({type: '*/*'}));
 app.get('/static/*', function (req, res) {
 	res.sendFile(__dirname + req.url);
 });
-app.get('/*', function (req, res) {
+
+app.get('/', function (req, res) {
 	res.sendFile( __dirname + '/static/app.html');
+	io.emit(common.DEBUG_CHANNEL_NAME, 'FOO');
 });
 
+
+app.get('/debug', function (req, res) {
+	res.sendFile( __dirname + '/static/debug.html');
+});
 
 /*
 app.get('/', function(req, res){
@@ -27,7 +34,7 @@ app.get('/', function(req, res){
 */
 app.post('/', function(req, res){
   const body = req.body;
-  io.emit('chat message', 'Received post: ' + body);
+  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: ' + body);
   res.set('Content-Type', 'text/plain');
   res.send('You sent foo2: ' + body + ' to Express');
   //io.emit('chat message', 'Received post: ' + body);
