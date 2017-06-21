@@ -7,27 +7,30 @@ const LOCATION_AREA_WIDTH_IN_PIXELS = 1200;
 // Scaling factor to convert location area pixels to meters
 const LOCATION_AREA_HEIGHT_PIXELS_TO_METERS_SCALING_FACTOR = 100.0;
 
-
+/*
 $("form").on("submit", function (e) {
     e.preventDefault();
 })
+*/
 
 /** Initialization on page load */
 $(window).load(function(){ 
         
+        // Clear location area button click handler
         $("#clearLocationAreaButton").click(function(){
             clearMobileDevices();
         });
 
+        // Inject message button click handler
         $("#injectMessageButton").click(function(){
 
             addMobileDevice();
         }); 
 
-/* Prevent form submit from reloading document */
-$("form").on("submit", function (e) {
-    e.preventDefault();
-});
+        /* Prevent form submit from reloading document */
+        $("form").on("submit", function (e) {
+            e.preventDefault();
+        });
 
         console.log(
             "Setting location area to: " + LOCATION_AREA_HEIGHT_IN_PIXELS + " pixels by " +
