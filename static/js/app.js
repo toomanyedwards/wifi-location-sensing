@@ -7,11 +7,7 @@ const LOCATION_AREA_WIDTH_IN_PIXELS = 1200;
 // Scaling factor to convert location area pixels to meters
 const LOCATION_AREA_HEIGHT_PIXELS_TO_METERS_SCALING_FACTOR = 100.0;
 
-/*
-$("form").on("submit", function (e) {
-    e.preventDefault();
-})
-*/
+
 
 /** Initialization on page load */
 $(window).load(function(){ 
@@ -45,12 +41,16 @@ $(window).load(function(){
 
    });
 
-/** Remove mobile devices displayed in the location area */
+/** 
+ * Remove mobile devices displayed in the location area 
+ */
 function addMobileDevice(){
     $( ".wifiLocationArea" ).append( "<div>Hello<divc>" );
 }
 
-/** Remove mobile devices displayed in the location area */
+/** 
+ * Remove mobile devices displayed in the location area 
+ */
 function clearMobileDevices(){
     alert("oo");
     $("#mobileDevice").remove();

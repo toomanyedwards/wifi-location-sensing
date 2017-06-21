@@ -8,7 +8,16 @@ var port = 8080;
 
 // BEGIN CONSTANTS
 
+// Name of the monitor event for signal strength packets
 const SIGNAL_STRENGTH_PACKET_RECEIVED_EVENT_NAME = "signalStrengthPacketReceived";
+
+
+// WIFI Channel Frequency in MHz
+// TODO: Channel hopping
+const WIFI_CHANNEL_FREQUENCY = 2412; // Channel 1
+
+
+const WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL = 27.55;
 
 // END CONSTANTS
 
@@ -58,8 +67,14 @@ app.post('/', function(req, res){
 				common.DEBUG_CHANNEL_NAME, 
 				monitorId +
 				" MAC: " + macAddress +
-				" Signal Strength: " + signalStrengthIndB
-				);
+				" Signal Strength: " + signalStrengthIndB +
+				" Distance from monitor: " +
+				calculateDistanceFromMonitor(
+					signalStrengthIndB,
+					WIFI_CHANNEL_FREQUENCY,
+					WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL
+				) + " meters"
+			);
 		}
 	}
 	res.set('Content-Type', 'text/plain');
@@ -68,6 +83,19 @@ app.post('/', function(req, res){
   
 });
 
+/**
+ * Given 
+ * 
+ * @param {Number} signalLevelInDb
+ * @param {Number} freqInMHz
+ * @param {Number} freeSpacePathLoss
+ * @return {Number} distance in meters
+ */
+function calculateDistanceFromMonitor(signalLevelInDb, freqInMHz, freeSpacePathLoss) {
+	// TODO: Lookup free space path loss for frequency
+    exp = (freeSpacePathLoss - (20 * Math.log10(freqInMHz)) + Math.abs(signalLevelInDb)) / 20.0;
+    return Math.pow(10.0, exp);
+}
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){

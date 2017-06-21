@@ -23,8 +23,7 @@ $(window).load(function(){
         $.ajax(
             "\\", 
             {
-                //data : '{"hello":"word"}',
-                data: $("#monitorMessageTextArea").text(),
+                data: $("#monitorMessageTextArea").val(),
                 contentType : 'application/json',
                 type : 'POST',
             }
