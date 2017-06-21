@@ -55,9 +55,8 @@ app.post('/', function(req, res){
 
 		io.emit(
 			common.DEBUG_CHANNEL_NAME, 
-			"Received event: " + event.name + 
-			" Source: " + event.monitorId +
-			" Device MAC: " + event.macAddress +
+			event.monitorId +
+			" MAC: " + event.macAddress +
 			" Signal Strength: " + event.signalStrengthIndB
 			);
 	}
