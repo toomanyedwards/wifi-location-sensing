@@ -51,14 +51,16 @@ app.post('/', function(req, res){
 		var macAddress = event.macAddress;
 		var signalStrengthIndB = event.signalStrengthIndB
 
-		// Emit event details to the debug channel
+		if (macAddress == "f0:24:75:7b:c6:d9"){
+			// Emit event details to the debug channel
 
-		io.emit(
-			common.DEBUG_CHANNEL_NAME, 
-			event.monitorId +
-			" MAC: " + event.macAddress +
-			" Signal Strength: " + event.signalStrengthIndB
-			);
+			io.emit(
+				common.DEBUG_CHANNEL_NAME, 
+				monitorId +
+				" MAC: " + macAddress +
+				" Signal Strength: " + signalStrengthIndB
+				);
+		}
 	}
 	res.set('Content-Type', 'text/plain');
 
