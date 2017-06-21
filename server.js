@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var common = require('./common/common.js');
+var common = require('./common/js/common.js');
 var bodyParser = require('body-parser'); 
 var port = 8080;
 
@@ -27,6 +27,10 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/static/*', function (req, res) {
+	res.sendFile(__dirname + req.url);
+});
+
+app.get('/common/*', function (req, res) {
 	res.sendFile(__dirname + req.url);
 });
 

@@ -1,4 +1,4 @@
-var DEBUG_CHANNEL_NAME = "chat message";
+var DEBUG_CHANNEL_NAME = "debug";
 
 
 module.exports = {
