@@ -21,10 +21,10 @@ app.use(bodyParser.urlencoded({
 
 
 // JUST NEED THIS FOR JSON
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 //support parsing of application/x-www-form-urlencoded post data
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/static/*', function (req, res) {
 	res.sendFile(__dirname + req.url);
