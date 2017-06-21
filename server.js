@@ -7,7 +7,7 @@ var port = 8080;
 
 
 //support parsing of application/json type post data
-app.use(bodyParser.text({type: '*/*'}));
+//app.use(bodyParser.text({type: '*/*'}));
 //bodyParser.json();
 /*
 app.use(bodyParser.urlencoded({
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 
 
 // JUST NEED THIS FOR JSON
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 //support parsing of application/x-www-form-urlencoded post data
 //app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,11 +48,11 @@ app.get('/', function(req, res){
 */
 app.post('/', function(req, res){
   const body = req.body;
-  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: foo2 ' + body);
-  //io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: bar ' + body.event.name);
+  //io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: foo2 ' + body);
+  io.emit(common.DEBUG_CHANNEL_NAME, 'Received post: bar ' + body.event.name);
   res.set('Content-Type', 'text/plain');
   //res.send('You sent foo2: ' + body + ' to Express');
-  res.send('You sent foo2: ' + body + ' to Express');
+  res.send('You sent foo2: ' + body.event + ' to Express');
   //io.emit('chat message', 'Received post: ' + body);
   
 });
