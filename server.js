@@ -59,23 +59,16 @@ app.post('/', function(req, res){
 		var macAddress = event.macAddress;
 		var signalStrengthIndB = event.signalStrengthIndB
 
-		// Filter for well known device for now
-		if (macAddress == "f0:24:75:7b:c6:d9"){
-			// Emit event details to the debug channel
+		
+		// Emit event details to the debug channel
 
-			io.emit(
-				common.DEBUG_CHANNEL_NAME, 
-				monitorId +
-				" MAC: " + macAddress +
-				" Signal Strength: " + signalStrengthIndB +
-				" Distance from monitor: " +
-				calculateDistanceFromMonitor(
-					signalStrengthIndB,
-					WIFI_CHANNEL_FREQUENCY,
-					WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL
-				) + " meters"
-			) 
-		}
+		io.emit(
+			common.DEBUG_CHANNEL_NAME, 
+			monitorId +
+			" MAC: " + macAddress +
+			" Signal Strength: " + signalStrengthIndB + "dB"
+		) 
+		
 	}
 	res.set('Content-Type', 'text/plain');
 
