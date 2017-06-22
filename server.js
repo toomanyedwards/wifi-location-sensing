@@ -60,7 +60,7 @@ app.post('/', function(req, res){
 		var macAddress = event.macAddress;
 		var signalStrengthIndB = event.signalStrengthIndB
 
-		if (macAddress == "f0:24:75:7b:c6:d9"){
+		//if (macAddress == "f0:24:75:7b:c6:d9"){
 			// Emit event details to the debug channel
 
 			io.emit(
@@ -75,7 +75,7 @@ app.post('/', function(req, res){
 					WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL
 				) + " meters"
 			);
-		}
+		//}
 	}
 	res.set('Content-Type', 'text/plain');
 
