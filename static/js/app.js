@@ -8,7 +8,6 @@ const LOCATION_AREA_WIDTH_IN_PIXELS = 1200;
 const LOCATION_AREA_HEIGHT_PIXELS_TO_METERS_SCALING_FACTOR = 100.0;
 
 
-
 /** Initialization on page load */
 $(window).load(function(){ 
         

@@ -15,8 +15,6 @@ const SIGNAL_STRENGTH_PACKET_RECEIVED_EVENT_NAME = "signalStrengthPacketReceived
 // WIFI Channel Frequency in MHz
 // TODO: Channel hopping
 const WIFI_CHANNEL_FREQUENCY = 2412; // Channel 1
-
-
 const WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL = 27.55;
 
 // END CONSTANTS
@@ -84,7 +82,7 @@ app.post('/', function(req, res){
 });
 
 /**
- * Given 
+ * Calculates distance from monitor in meters
  * 
  * @param {Number} signalLevelInDb
  * @param {Number} freqInMHz
