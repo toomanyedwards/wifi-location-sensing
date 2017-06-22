@@ -1,5 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
+var math = require('mathjs');
 var io = require('socket.io')(http);
 var common = require('./common/js/common.js');
 var bodyParser = require('body-parser'); 
@@ -91,7 +92,7 @@ app.post('/', function(req, res){
  */
 function calculateDistanceFromMonitor(signalLevelInDb, freqInMHz, freeSpacePathLoss) {
 	// TODO: Lookup free space path loss for frequency
-    exp = (freeSpacePathLoss - (20 * Math.log10(freqInMHz)) + Math.abs(signalLevelInDb)) / 20.0;
+    exp = (freeSpacePathLoss - (20 * math.log10(freqInMHz)) + math.abs(signalLevelInDb)) / 20.0;
     return Math.pow(10.0, exp);
 }
 
