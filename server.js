@@ -59,6 +59,7 @@ app.post('/', function(req, res){
 		var macAddress = event.macAddress;
 		var signalStrengthIndB = event.signalStrengthIndB
 
+		// Filter for well known device for now
 		if (macAddress == "f0:24:75:7b:c6:d9"){
 			// Emit event details to the debug channel
 
