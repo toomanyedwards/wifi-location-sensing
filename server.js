@@ -74,7 +74,7 @@ app.post('/', function(req, res){
 					WIFI_CHANNEL_FREQUENCY,
 					WIFI_FREE_SPACE_PATH_LOSS_CONSTANT_FOR_CHANNEL
 				) + " meters"
-			);
+			) 
 		}
 	}
 	res.set('Content-Type', 'text/plain');
